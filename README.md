@@ -13,6 +13,7 @@ Each service is put in a separate folder:
 
     .
     ├── README.md
+    ├── config-repo-samples                        Copy to `config-sample`
     ├── config-repo                                Repository for the configuration server
     │   ├── application.properties                 Base configuration (applied to all other configurations)
     │   ├── config-server.properties               Configuration for the config server
@@ -30,6 +31,16 @@ Each service is put in a separate folder:
     │   └── ...
     └── pom.xml                                    EXPERIMENTAL multi-pom for each of the sub-projects
 
+
+
+Sub Projects
+------------
+
+### Config Repo
+
+Currently not versioned - contains configuration files for the Spring Cloud Configuration Server.
+
+###
 
 
 
