@@ -9,7 +9,9 @@ Spring Cloud Config Server
 * Push the repository to Github
 * Get the https URL (browser URL not git URL) and use it for configuring the the config-server `application.properties` file like so:
 
-    spring.cloud.config.server.git.uri=https://github.com/michaellihs/config-repo/
+````
+spring.cloud.config.server.git.uri=https://github.com/michaellihs/config-repo/
+````
 
 ### Using File System Backend
 
@@ -22,42 +24,54 @@ For the configuration of the File System Backend, set `spring.profiles.active=na
 * Kickstart config server project on [https://start.spring.io](https://start.spring.io)
 * Open the project and change the following lines in `ConfigServerApplication.java`:
 
-    @EnableConfigServer       // <-- this line needs to be added!
-    @SpringBootApplication
-    public class ConfigServerApplication {
+````java
+@EnableConfigServer       // <-- this line needs to be added!
+@SpringBootApplication
+public class ConfigServerApplication {
 
-    	public static void main(String[] args) {
-    		SpringApplication.run(ConfigServerApplication.class, args);
-    	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(ConfigServerApplication.class, args);
     }
+
+}
+````
 
 * in the `bootstrap.properties` add
 
-    spring.application.name=config-server
+````
+spring.application.name=config-server
+````
 
 ### The Config Client
 
 * Add the following dependency to the `pom.xml`
 
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-config</artifactId>
-    </dependency>
+````xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-config</artifactId>
+</dependency>
+````
 
 * Add a `bootstrap.properties` with your application name and the URL to the config server, like
 
-    spring.application.name=message-producer
-    spring.cloud.config.uri=http://localhost:8888
+````
+spring.application.name=message-producer
+spring.cloud.config.uri=http://localhost:8888
+````
 
 * If you want to use the config from the configuration server, use the following annotation
 
-    @RefreshScope
+````
+@RefreshScope
+````
 
 * Values from the configuration (identified by a `.properties` file with the name of the application given in `bootstrap.properties`) can be read with
 
-    @Value("${message}")
-    String name = "World";
+````java
+@Value("${message}")
+String name = "World";
+````
 
 
 Open Issues
