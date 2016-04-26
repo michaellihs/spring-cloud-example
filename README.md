@@ -48,6 +48,9 @@ Holds a bunch of sample configs. Copy this directory to `config-repo` for gettin
 
 See the [config-server README](config-server/README.md)
 
+### message-producer
+
+See the [message-producer README](message-producer/README.md)
 
 
 
