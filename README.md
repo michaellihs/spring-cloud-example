@@ -36,11 +36,17 @@ Each service is put in a separate folder:
 Sub Projects
 ------------
 
-### Config Repo
+### config-repo
 
 Currently not versioned - contains configuration files for the Spring Cloud Configuration Server.
 
-###
+### config-repo-samples
+
+Holds a bunch of sample configs. Copy this directory to `config-repo` for getting some sample configuration files to be used with the Spring Cloud Config Server.
+
+### config-server
+
+See the [config-server README](config-server/README.md)
 
 
 
